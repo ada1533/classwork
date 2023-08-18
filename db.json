@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "name": "м",
+      "position": "2313213",
+      "expirience": "12",
+      "favorites": true,
+      "id": 1
+    }
+  ],
+  "favorites": [
+    {
+      "id": "favorite-1",
+      "user": {
+        "name": "м",
+        "position": "2313213",
+        "expirience": "12",
+        "favorites": true,
+        "id": 1
+      }
+    }
+  ]
+}
