@@ -94,9 +94,7 @@ const usersSlice = createSlice({
         cleanOneUser: (state, action) => {
             state.oneUser = null;
         },
-        updateFavorites: (state, action) => {
-            state.favorites = action.payload;
-        }
+
     },
     extraReducers: {
         [getUsers.pending]: (state, action) => {
@@ -120,5 +118,5 @@ const usersSlice = createSlice({
     }
 });
 
-export const { cleanOneUser, updateFavorites } = usersSlice.actions;
+export const { cleanOneUser } = usersSlice.actions;
 export default usersSlice.reducer;
