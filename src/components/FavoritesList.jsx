@@ -9,7 +9,7 @@ const FavoritesList = () => {
 
     useEffect(() => {
         dispatch(getFavorites());
-    }, []);
+    }, [dispatch]);
 
     return (
         <>
