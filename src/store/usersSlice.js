@@ -31,20 +31,20 @@ export const getOneUser = createAsyncThunk(
 export const deleteUser = createAsyncThunk(
     'user/deleteUser',
     async (id, { dispatch, getState }) => {
-        await axios.delete(`${API}/${id}`);
         const state = getState().users;
         const userId = id;
 
-        if (state.favorites.some(favorite => favorite.user.id === userId)) {
-            const updatedFavorites = state.favorites.filter(favorite => favorite.user.id !== userId);
-            dispatch(updateFavorites(updatedFavorites)); // Dispatching the action to update favorites
+        const isFavorite = state.favorites.some(favorite => favorite.user.id === userId);
+
+        if (isFavorite) {
+            await dispatch(addToFavorites({ id: userId, favorites: false }));
         }
 
+        await axios.delete(`${API}/${id}`);
+        
         dispatch(getUsers());
     }
 );
-
-
 
 export const saveChanges = createAsyncThunk(
     'users/saveChanges',
