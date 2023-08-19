@@ -13,7 +13,7 @@ const UserEdit = () => {
   useEffect(() => {
     dispatch(getOneUser(id));
     return () => dispatch(cleanOneUser());
-  }, []);
+  }, [dispatch, id]);
 
   return (
     <>
